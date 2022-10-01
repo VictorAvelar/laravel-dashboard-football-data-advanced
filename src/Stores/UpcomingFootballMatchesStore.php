@@ -2,9 +2,9 @@
 
 namespace Avelar\FootballDataAdvanced\Stores;
 
-use Avelar\FootballDataAdvanced\Config;
-use Carbon\Carbon;
 use Spatie\Dashboard\Models\Tile;
+use Carbon\Carbon;
+use Avelar\FootballDataAdvanced\Config;
 
 class UpcomingFootballMatchesStore
 {
@@ -46,7 +46,7 @@ class UpcomingFootballMatchesStore
 
     public function upcomingMatches(): array
     {
-        $data = $this->tile->getData('football_data_upcoming');
+        $data = $this->tile->getData('upcoming');
         $priority = collect($data)->filter(function ($item) {
             return in_array(
                 $item['home']['tla'],
