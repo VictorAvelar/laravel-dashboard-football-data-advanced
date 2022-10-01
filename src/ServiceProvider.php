@@ -9,7 +9,7 @@ use Avelar\FootballDataAdvanced\Components\MatchResultsTileComponent;
 use Avelar\FootballDataAdvanced\Components\LeagueStandingsTileComponent;
 use Avelar\FootballDataAdvanced\Commands\FetchUpcomingFootballMatchesCommand;
 use Avelar\FootballDataAdvanced\Commands\FetchMatchResultsCommand;
-use Avelar\FootballDataAdvanced\Commands\FetchLeaguesStandingsCommand;
+use Avelar\FootballDataAdvanced\Commands\FetchLeagueStandingsCommand;
 
 class ServiceProvider extends SupportServiceProvider
 {
@@ -19,18 +19,18 @@ class ServiceProvider extends SupportServiceProvider
             $this->commands([
                 FetchMatchResultsCommand::class,
                 FetchUpcomingFootballMatchesCommand::class,
-                FetchLeaguesStandingsCommand::class,
+                FetchLeagueStandingsCommand::class,
             ]);
         }
 
         $this->publishes([
-            __DIR__ . '/../resources/views' => resource_path(
+            __DIR__.'/../resources/views' => resource_path(
                 'views/vendor/dashdoard-football-data-advanced'
             ),
         ], 'dashboard-football-data-advanced-tiles');
 
         $this->loadViewsFrom(
-            __DIR__ . '/../resoruces/views',
+            __DIR__.'/../resoruces/views',
             'dashboard-football-data-advanced',
         );
 
