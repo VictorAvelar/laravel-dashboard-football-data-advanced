@@ -1,39 +1,28 @@
+# A collection of tiles to display football data.
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/VictorAvelar/laravel-dashboard-football-data-advanced.svg?style=flat-square)](https://packagist.org/packages/VictorAvelar/laravel-dashboard-football-data-advanced)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/VictorAvelar/laravel-dashboard-football-data-advanced/run-tests?label=tests)](https://github.com/VictorAvelar/laravel-dashboard-football-data-advanced/actions?query=workflow%3Arun-tests+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/VictorAvelar/laravel-dashboard-football-data-advanced.svg?style=flat-square)](https://packagist.org/packages/:vendor/laravel-dashboard-football-data-advanced)
 
-# A short description of the tile
-
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor/:package_name.svg?style=flat-square)](https://packagist.org/packages/:vendor/:package_name)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/:vendor/:package_name/run-tests?label=tests)](https://github.com/:vendor/:package_name/actions?query=workflow%3Arun-tests+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/:vendor/:package_name.svg?style=flat-square)](https://packagist.org/packages/:vendor/:package_name)
-
-A friendly explanation of what your tile does.
+Laravel dashboard tiles to display matches, results, standings and more football data stats. 
 
 This tile can be used on [the Laravel Dashboard](https://docs.spatie.be/laravel-dashboard).
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-dashboard-skeleton-tile.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-dashboard-skeleton-tile)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require :vendor/:package_name
+composer require victoravelar/laravel-dashboard-football-data-advanced
 ```
 
 ## Usage
 
-In your dashboard view you use the `livewire:my-tile` component.
+In your dashboard view you use the `livewire:football-data-advanced` component.
 
 ```html
 <x-dashboard>
-    <livewire:my-tile position="e7:e16" />
+    <livewire:football-data-advanced position="e7:e16" />
 </x-dashboard>
 ```
 
@@ -45,7 +34,7 @@ composer test
 
 ## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+Please see [CHANGELOG](https://github.com/VictorAvelar/laravel-dashboard-football-data-advanced/releases) for more information on what has changed recently.
 
 ## Contributing
 
@@ -53,7 +42,7 @@ Please see [CONTRIBUTING](https://github.com/spatie/.github/blob/main/CONTRIBUTI
 
 ## Security
 
-If you discover any security related issues, please email :author_email instead of using the issue tracker.
+If you discover any security related issues, please email deltatuts@gmail.com instead of using the issue tracker.
 
 ## Credits
 

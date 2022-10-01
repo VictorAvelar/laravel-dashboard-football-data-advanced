@@ -1,17 +1,21 @@
 {
-    "name": ":vendor/:package_name",
+    "name": "victoravelar/laravel-dashboard-football-data-advanced",
     "description": ":package_description",
     "keywords": [
-        ":vendor",
-        ":package_name"
+        "victoravelar",
+        "laravel-dashboard-football-data-advanced",
+        "laravel-dashboard",
+        "laravel-dashboard-tile",
+        "football-data",
+        "standings"
     ],
-    "homepage": "https://github.com/:vendor/:package_name",
+    "homepage": "https://github.com/VictorAvelar/laravel-dashboard-football-data-advanced",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": "https://:vendor.be",
+            "name": "Victor Avelar",
+            "email": "deltatuts@gmail.com",
+            "homepage": "https://victoravelar.dev",
             "role": "Developer"
         }
     ],
@@ -25,18 +29,20 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\MyTile\\": "src"
+            "Avelar\\FootballDataAdvanced\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\MyTile\\Tests\\": "tests"
+            "Avelar\\FootballDataAdvanced\\Tests\\": "tests"
         }
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
-        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes",
+        "check-style": "phpcs src --ignore=tests/*",
+        "fix-style": "phpcbf src --ignore=tests/*"
     },
     "config": {
         "sort-packages": true
@@ -44,7 +50,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\MyTile\\MyTileServiceProvider"
+                "Avelar\\FootballDataAdvanced\\FootballDataAdvancedTilesServiceProvider"
             ]
         }
     },
