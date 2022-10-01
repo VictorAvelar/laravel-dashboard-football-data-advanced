@@ -2,7 +2,11 @@
 
 namespace Avelar\FootballDataAdvanced;
 
+use Livewire\Livewire;
 use Illuminate\Support\ServiceProvider;
+use Avelar\FootballDataAdvanced\Components\UpcomingMatchesTileComponent;
+use Avelar\FootballDataAdvanced\Components\MatchResultsTileComponent;
+use Avelar\FootballDataAdvanced\Components\LeagueStandingsTileComponent;
 use Avelar\FootballDataAdvanced\Commands\FetchUpcomingFootballMatchesCommand;
 use Avelar\FootballDataAdvanced\Commands\FetchMatchResultsCommand;
 use Avelar\FootballDataAdvanced\Commands\FetchLeaguesStandingsCommand;
@@ -29,5 +33,9 @@ class FootballDataAdvancedServiceProvider extends ServiceProvider
             __DIR__ . '/../resoruces/views',
             'dashboard-football-data-advanced',
         );
+
+        Livewire::component('fda-standings', LeagueStandingsTileComponent::class);
+        Livewire::component('fda-results', MatchResultsTileComponent::class);
+        Livewire::component('fda-upcoming', UpcomingMatchesTileComponent::class);
     }
 }
