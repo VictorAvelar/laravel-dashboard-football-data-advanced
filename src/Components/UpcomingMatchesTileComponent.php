@@ -2,11 +2,10 @@
 
 namespace Avelar\FootballDataAdvanced\Components;
 
-use Avelar\FootballDataAdvanced\Config;
-use Avelar\FootballDataAdvanced\Stores\MatchResultsStore;
 use Livewire\Component;
+use Avelar\FootballDataAdvanced\Stores\UpcomingFootballMatchesStore;
 
-class MatchResultsTileComponent extends Component
+class UpcomingMatchesTileComponent extends Component
 {
     public string $position;
 
@@ -22,12 +21,12 @@ class MatchResultsTileComponent extends Component
                 ?? 60;
 
         return view(
-            'dashboard-football-data-advanced::results',
+            'dashboard-football-data-advanced::upcoming',
             array_merge(
                 [
                 'refreshIntervalInSeconds' => $refreshRate,
             ],
-            MatchResultsStore::make()->matchResults()
+            UpcomingFootballMatchesStore::make()->upcomingMatches()
             )
         );
     }
