@@ -3,6 +3,7 @@
 namespace Avelar\FootballDataAdvanced\Commands;
 
 use Illuminate\Support\Facades\Http;
+use Illuminate\Console\Command;
 use Avelar\FootballDataAdvanced\Stores\LeagueStandingsStore;
 use Avelar\FootballDataAdvanced\Config;
 
