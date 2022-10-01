@@ -1,6 +1,6 @@
 {
     "name": "victoravelar/laravel-dashboard-football-data-advanced",
-    "description": ":package_description",
+    "description": "Laravel dashboard tiles to display matches, results, standings and more football data stats.",
     "keywords": [
         "victoravelar",
         "laravel-dashboard-football-data-advanced",
