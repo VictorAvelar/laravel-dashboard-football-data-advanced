@@ -25,8 +25,8 @@ class UpcomingMatchesTileComponent extends Component
             array_merge(
                 [
                 'refreshIntervalInSeconds' => $refreshRate,
-            ],
-            UpcomingFootballMatchesStore::make()->upcomingMatches()
+                ],
+                UpcomingFootballMatchesStore::make()->upcomingMatches()
             )
         );
     }

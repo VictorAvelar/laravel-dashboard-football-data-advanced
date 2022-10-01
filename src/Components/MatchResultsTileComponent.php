@@ -26,8 +26,8 @@ class MatchResultsTileComponent extends Component
             array_merge(
                 [
                 'refreshIntervalInSeconds' => $refreshRate,
-            ],
-            MatchResultsStore::make()->matchResults()
+                ],
+                MatchResultsStore::make()->matchResults()
             )
         );
     }

@@ -29,8 +29,8 @@ class LeagueStandingsTileComponent extends Component
             array_merge(
                 [
                 'refreshIntervalInSeconds' => $refreshRate,
-            ],
-            LeagueStandingsStore::make($this->competition)->standings()
+                ],
+                LeagueStandingsStore::make($this->competition)->standings()
             )
         );
     }
