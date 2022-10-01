@@ -48,6 +48,10 @@ return [
             | value is 1 week as the space for displaying is limited and most of the
             | values will not fit the available tile space.
             |
+            | The value must be a strtotime valid string without sign.
+            |
+            | See: https://www.php.net/manual/en/function.strtotime.php
+            |
             */
             'future' => '2 days',
 
