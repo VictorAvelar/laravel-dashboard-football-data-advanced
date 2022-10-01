@@ -4,6 +4,7 @@ namespace Avelar\FootballDataAdvanced\Commands;
 
 use Illuminate\Support\Facades\Http;
 use Avelar\FootballDataAdvanced\Stores\LeagueStandingsStore;
+use Avelar\FootballDataAdvanced\Config;
 
 class FetchLeaguesStandingsCommand extends Command
 {
@@ -28,15 +29,11 @@ class FetchLeaguesStandingsCommand extends Command
      */
     public function handle()
     {
-        $competitions = config(
-            'dashboard.tiles.football_data_advanced.competitions'
-        );
+        $competitions = Config::value(Config::COMPETITIONS);
 
         foreach ($competitions as $competition) {
             $teams = Http::withHeaders([
-                'X-Auth-token' => config(
-                    'dashboard.tiles.football_data_advanced.api-key'
-                ),
+                'X-Auth-token' => Config::value(Config::API_KEY),
             ])
                 ->get("https://api.football-data.org/v4/competitions/$competition/standings")
                 ->json();
