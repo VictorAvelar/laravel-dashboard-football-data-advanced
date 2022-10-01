@@ -16,7 +16,104 @@ You can install the package via composer:
 composer require victoravelar/laravel-dashboard-football-data-advanced
 ```
 
+## Configuration
+
+```php
+// in config/dashboard.php
+
+return [
+    // other settings
+    'tiles' => [
+        // other tiles ...
+        'football_data_advanced' => [
+            /*
+            |--------------------------------------------------------------------------
+            | Football-data.org API KEY
+            |--------------------------------------------------------------------------
+            |
+            | In order to fetch the data an API key is required, get yours at 
+            | https://www.football-data.org/client/register.
+            | The API is provided in a FREMIUM model thus the information to be
+            | displayed is limited by your own API plan.
+            |
+            */
+            'api-key' => env('FOOTBALL_DATA_API_KEY', ''),
+
+            /*
+            |--------------------------------------------------------------------------
+            | Future lookup limit.
+            |--------------------------------------------------------------------------
+            |
+            | Sets the limit to look forward for upcoming matches, the max. suggested
+            | value is 1 week as the space for displaying is limited and most of the
+            | values will not fit the available tile space.
+            |
+            | The value must be a strtotime valid string without sign.
+            |
+            | See: https://www.php.net/manual/en/function.strtotime.php
+            |
+            */
+            'future' => '2 days',
+
+            /*
+            |--------------------------------------------------------------------------
+            | Past lookup limit.
+            |--------------------------------------------------------------------------
+            |
+            | Sets the limit to look backwards for resutls, the max. suggested
+            | value is 1 week as the space for displaying is limited and most of the
+            | values will not fit the available tile space.
+            |
+            | The value must be a strtotime valid string without sign.
+            |
+            | See: https://www.php.net/manual/en/function.strtotime.php
+            |
+            */
+            'past' => '3 days',
+            
+            /*
+            |--------------------------------------------------------------------------
+            | Competitions of interest.
+            |--------------------------------------------------------------------------
+            |
+            | The list of competitions that you are interested in.
+            |
+            | The values for all the competitions can be found here:
+            | https://docs.football-data.org/general/v4/lookup_tables.html#_league_codes
+            |
+            | The leagues available in the free tier are the following: Champions League,
+            | Primeira Liga, Premier League, Eredivisie, Bundesliga, Ligue 1, Serie A,
+            | La Liga, Championship, Serie A BR, Worldcup, Euro.
+            |
+            */
+            'competitions' => ['PD', 'PL', 'FL1', 'BL1', 'CL', 'SA'],
+
+            /*
+            |--------------------------------------------------------------------------
+            | Priority Football teams.
+            |--------------------------------------------------------------------------
+            |
+            | A list of the teams you consider a priority across the tracked competitions.
+            |
+            | You must use the team acronym, ex. use `PSG` for Paris St. Germain.
+            |
+            */
+            'priority' => [
+                'FCB',
+                'MCI',
+                'LIV',
+                'PSG',
+                'RBL',
+            ],
+        ],
+    ],
+];
+
+```
+
 ## Usage
+
+This package contains multiple tiles to display information from [Football-data.org](https://www.football-data.org/), the usage will be broken down per tile.
 
 In your dashboard view you use the `livewire:football-data-advanced` component.
 
