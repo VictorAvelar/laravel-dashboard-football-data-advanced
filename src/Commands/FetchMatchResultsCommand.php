@@ -5,12 +5,10 @@ namespace Avelar\FootballDataAdvanced\Commands;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Console\Command;
 use Avelar\FootballDataAdvanced\Stores\MatchResultsStore;
+use Avelar\FootballDataAdvanced\Config;
 
 class FetchMatchResultsCommand extends Command
 {
-    public const COMPETITIONS_NS = 'dashboard.tiles.football_data_advanced.competitions';
-    public const PAST_NS = 'dashboard.tiles.football_data_advanced.past';
-
     /**
      * The name and signature of the console command.
      *
@@ -34,21 +32,23 @@ class FetchMatchResultsCommand extends Command
     {
         $this->info('Fetching football matches');
 
-        $limit = config(self::PAST_NS);
+        $limit = Config::value(Config::PAST);
 
         $params = [
             'dateTo' => now()->format('Y-m-d'),
             'dateFrom' => date('Y-m-d', strtotime("-{$limit}")),
         ];
 
-        if (!empty(config(self::COMPETITIONS_NS))) {
+        if (!empty(Config::value(Config::COMPETITIONS))) {
             $params['competitions'] = implode(
                 ',',
-                config(self::COMPETITIONS_NS)
+                Config::value(Config::COMPETITIONS)
             );
         }
 
-        $matches = Http::withHeaders(['X-Auth-token' => config('dashboard.tiles.football_data_advanced.api-key')])
+        $matches = Http::withHeaders([
+            'X-Auth-token' => Config::value(Config::API_KEY),
+            ])
             ->get('https://api.football-data.org/v4/matches', $params)
             ->json();
 
