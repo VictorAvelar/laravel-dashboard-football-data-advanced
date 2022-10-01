@@ -50,7 +50,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Avelar\\FootballDataAdvanced\\FootballDataAdvancedTilesServiceProvider"
+                "Avelar\\FootballDataAdvanced\\ServiceProvider"
             ]
         }
     },

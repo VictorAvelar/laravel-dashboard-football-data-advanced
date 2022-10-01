@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Http;
 use Avelar\FootballDataAdvanced\Stores\LeagueStandingsStore;
 use Avelar\FootballDataAdvanced\Config;
 
-class FetchLeaguesStandingsCommand extends Command
+class FetchLeagueStandingsCommand extends Command
 {
     /**
      * The name and signature of the console command.
