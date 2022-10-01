@@ -7,6 +7,8 @@ use Carbon\Carbon;
 
 class MatchResultsStore
 {
+    public const PRIORITY_NS = 'dashboard.tiles.football_data_advanced.priority';
+
     public Tile $tile;
 
     public static function make()
@@ -53,11 +55,11 @@ class MatchResultsStore
         $priority = collect($data)->filter(function ($item) {
             return in_array(
                 $item['home']['tla'],
-                config('dashboard.tiles.football_data_advanced.priority')
+                config(self::PRIORITY_NS)
             ) or
                 in_array(
                     $item['away']['tla'],
-                    config('dashboard.tiles.football_data_advanced.priority')
+                    config(self::PRIORITY_NS)
                 );
         })->toArray();
 
