@@ -8,6 +8,8 @@ use Avelar\FootballDataAdvanced\Stores\MatchResultsStore;
 
 class FetchMatchResultsCommand extends Command
 {
+    public const COMPETITIONS_NS = 'dashboard.tiles.football_data_advanced.competitions';
+
     /**
      * The name and signature of the console command.
      *
@@ -38,13 +40,10 @@ class FetchMatchResultsCommand extends Command
             'dateFrom' => date('Y-m-d', strtotime("-{$limit}")),
         ];
 
-        if (!empty(config(
-            'dashboard.tiles.football_data_advanced.competitions'
-            ))
-        ) {
+        if (!empty(config(self::COMPETITIONS_NS))) {
             $params['competitions'] = implode(
                 ',',
-                config('dashboard.tiles.football_data_advanced.competitions')
+                config(self::COMPETITIONS_NS)
             );
         }
 

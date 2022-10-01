@@ -23,11 +23,9 @@ class MatchResultsStore
     {
         $matches = collect($results);
         $data = $matches->map(function ($item) {
-            $date = Carbon::parse(
-                $item['utcDate']
-            )->timezone(
-                env('APP_TZ', 'UTC')
-                )->format('c');
+            $date = Carbon::parse($item['utcDate'])
+            ->timezone(env('APP_TZ', 'UTC'))
+            ->format('c');
 
             return [
                 'home' => [
@@ -56,7 +54,7 @@ class MatchResultsStore
             return in_array(
                 $item['home']['tla'],
                 config('dashboard.tiles.football_data_advanced.priority')
-                ) or
+            ) or
                 in_array(
                     $item['away']['tla'],
                     config('dashboard.tiles.football_data_advanced.priority')
