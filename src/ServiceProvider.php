@@ -30,7 +30,7 @@ class ServiceProvider extends SupportServiceProvider
         ], 'dashboard-football-data-advanced-tiles');
 
         $this->loadViewsFrom(
-            __DIR__.'/../resoruces/views',
+            __DIR__.'/../resources/views',
             'dashboard-football-data-advanced',
         );
 
