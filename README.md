@@ -37,7 +37,7 @@ return [
             | displayed is limited by your own API plan.
             |
             */
-            'api-key' => env('FOOTBALL_DATA_API_KEY', ''),
+            'api_key' => env('FOOTBALL_DATA_API_KEY', ''),
 
             /*
             |--------------------------------------------------------------------------
