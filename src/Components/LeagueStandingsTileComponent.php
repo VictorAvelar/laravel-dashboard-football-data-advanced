@@ -21,17 +21,13 @@ class LeagueStandingsTileComponent extends Component
     public function render()
     {
         $refreshRate = $this->refreshInSeconds
-                ?? Config::value('refresh_interval_in_seconds')
-                ?? 60;
+            ?? Config::value('refresh_interval_in_seconds')
+            ?? 60;
 
-        return view(
-            'dashboard-football-data-advanced::standings',
-            array_merge(
-                [
-                'refreshIntervalInSeconds' => $refreshRate,
-                ],
-                LeagueStandingsStore::make($this->competition)->standings()
-            )
-        );
+        return view('dashboard-football-data-advanced::standings', [
+            'data' => LeagueStandingsStore::make($this->competition)->standings(),
+            'priorityList' => Config::value(Config::PRIORITY),
+            'refreshIntervalInSeconds' => $refreshRate,
+        ]);
     }
 }
