@@ -163,6 +163,20 @@ In your dashboard view you use the `livewire:fda-results` component.
 
 ![Upcoming matches](media/league-standings.png)
 
+## Sample dashboard
+
+```html
+<x-dashboard>
+    <livewire:fda-standings position="a1" competition="PL"/>
+    <livewire:fda-results position="b1" /> 
+    <livewire:fda-upcoming position="c1"/>
+</x-dashboard>
+```
+
+### Screenshot
+
+![Upcoming matches](media/full-dashboard.png)
+
 ## Testing
 
 ``` bash
