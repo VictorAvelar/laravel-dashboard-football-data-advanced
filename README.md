@@ -131,6 +131,38 @@ In your dashboard view you use the `livewire:fda-upcoming` component.
 
 ![Upcoming matches](media/upcoming-matches.png)
 
+### Match results
+
+This tile displays football matches resutls from the leagues you selected in `dashboard.tiles.football_data_advanced.competitions`.
+
+In your dashboard view you use the `livewire:fda-results` component.
+
+```html
+<x-dashboard>
+    <livewire:fda-results position="a1" />
+</x-dashboard>
+```
+
+#### Example
+
+![Upcoming matches](media/match-results.png)
+
+### League standings
+
+This tile displays the standings for one of your selected leagues, you need to use the league code as parameter for the component.
+
+In your dashboard view you use the `livewire:fda-results` component.
+
+```html
+<x-dashboard>
+    <livewire:fda-standings position="a1" competition="PL"/>
+</x-dashboard>
+```
+
+#### Example
+
+![Upcoming matches](media/league-standings.png)
+
 ## Testing
 
 ``` bash
