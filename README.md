@@ -115,13 +115,21 @@ return [
 
 This package contains multiple tiles to display information from [Football-data.org](https://www.football-data.org/), the usage will be broken down per tile.
 
-In your dashboard view you use the `livewire:football-data-advanced` component.
+### Upcoming matches
+
+This tile displays upcoming football matches from the leagues you selected in `dashboard.tiles.football_data_advanced.competitions`.
+
+In your dashboard view you use the `livewire:fda-upcoming` component.
 
 ```html
 <x-dashboard>
-    <livewire:football-data-advanced position="e7:e16" />
+    <livewire:fda-upcoming position="a1" />
 </x-dashboard>
 ```
+
+#### Example
+
+![Upcoming matches](media/upcoming-matches.png)
 
 ## Testing
 
