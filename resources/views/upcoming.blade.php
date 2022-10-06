@@ -3,6 +3,9 @@
     <div class="overflow-hidden rounded-md bg-white shadow">
         <ul role="list" class="divide-y divide-gray-200">
             @foreach ($priority as $match)
+                @if (!in_array($match, $priority))
+                    @continue
+                @endif
                 @php
                     $date = Carbon\Carbon::parse($match['date'])->timezone(@env('APP_TZ', 'UTC'));
                     $datestr = '';
@@ -11,7 +14,7 @@
                     } elseif ($date->isTomorrow()) {
                         $datestr = 'Tomorrow';
                     } else {
-                        $datesrt = $date->diffForHumans();
+                        $datestr = $date->format('d.m');
                     }
 
                     $time = $date->format('H:i');
@@ -66,7 +69,7 @@
                     } elseif ($date->isTomorrow()) {
                         $datestr = 'Tomorrow';
                     } else {
-                        $datesrt = $date->diffForHumans();
+                        $datestr = $date->format('d.m');
                     }
 
                     $time = $date->format('H:i');
