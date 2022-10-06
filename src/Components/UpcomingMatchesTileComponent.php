@@ -4,6 +4,7 @@ namespace Avelar\FootballDataAdvanced\Components;
 
 use Livewire\Component;
 use Avelar\FootballDataAdvanced\Stores\UpcomingFootballMatchesStore;
+use Avelar\FootballDataAdvanced\Config;
 
 class UpcomingMatchesTileComponent extends Component
 {
